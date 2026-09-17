@@ -6,8 +6,8 @@ title_separator: "-"
 name: "Junteng Liu"
 description: "Junteng Liu — NLP and machine learning researcher at HKUST."
 url: "https://wsbeub.github.io"
-baseurl: "/academicpages.github.io"
-repository: "wsbeub/academicpages.github.io"
+baseurl: "/LJT-Homepage"
+repository: "wsbeub/LJT-Homepage"
 
 author:
   name: "Junteng Liu"
