@@ -3,34 +3,18 @@ layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
+published: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+<p>See also <a href="{{ site.author.googlescholar | escape }}">my Google Scholar profile</a>.</p>
+{% assign years = site.data.personal_publications | group_by: 'year' %}
+{% for year in years %}
+<h2>{{ year.name }}</h2>
+{% for paper in year.items %}
+<article class="archive__item">
+  <h3 class="archive__item-title">{{ paper.title | escape }}</h3>
+  <p>{{ paper.authors | escape }}<br>
+  <em>{{ paper.venue | escape }}</em>, {{ paper.year }}{% if paper.first_author %} · First author{% endif %}</p>
+</article>
+{% endfor %}
+{% endfor %}
