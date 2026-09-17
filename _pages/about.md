@@ -16,17 +16,28 @@ My research focuses on **natural language processing and machine learning**, wit
 - **Hallucination in vision-language models (VLMs)**
 - **LLM truthfulness and interpretability**
 
+## Publications
+
+[Publications page]({{ '/publications/' | relative_url }}) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
+
+{% assign publication_years = site.data.personal_publications | group_by: 'year' %}
+{% for year in publication_years %}
+### {{ year.name }}
+
+{% for paper in year.items %}
+#### {{ paper.title }}
+
+{{ paper.authors }}  
+*{{ paper.venue }}*, {{ paper.year }}{% if paper.first_author %} · **First author**{% endif %}
+
+{% endfor %}
+{% endfor %}
+
 ## Research experience
 
 - **MINIMAX** — Research Intern, February 2025–Present
 - **Tencent WXG** — Research Intern, June–September 2024; advised by Zifei Shan
 - **Shanghai AI Lab** — Research Intern, June–December 2023; advised by Professor Yu Cheng
-
-## Publications
-
-My work includes SynLogic, chart understanding with VLMs, truthfulness in LLMs, hallucination mitigation, C-Eval, and parameter-efficient module composition.
-
-[View publications]({{ '/publications/' | relative_url }}) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
 
 ## Contact
 
