@@ -18,20 +18,7 @@ My research focuses on **natural language processing and machine learning**, wit
 
 ## Publications
 
-[Publications page]({{ '/publications/' | relative_url }}) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
-
-{% assign publication_years = site.data.personal_publications | group_by: 'year' %}
-{% for year in publication_years %}
-### {{ year.name }}
-
-{% for paper in year.items %}
-#### {{ paper.title }}
-
-{{ paper.authors }}  
-*{{ paper.venue }}*, {{ paper.year }}{% if paper.first_author %} · **First author**{% endif %}
-
-{% endfor %}
-{% endfor %}
+[View publications]({{ '/publications/' | relative_url }}) · [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate)
 
 ## Research experience
 
